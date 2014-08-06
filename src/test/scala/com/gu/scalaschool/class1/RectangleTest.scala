@@ -15,6 +15,10 @@ class RectangleTest extends FlatSpec with Matchers {
     new Rectangle(10, 9) should not equal new Rectangle(10, 10)
   }
 
+  it should "be false for non-Rectangles" in {
+    new Rectangle(1, 1) should not equal "i am a string"
+  }
+
   "hashCode" should "be equal for two Rectangles with the same width and height" in {
     new Rectangle(5, 5).hashCode shouldEqual new Rectangle(5, 5).hashCode()
   }
